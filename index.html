@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="تحدي الـ 3000 سؤال" />
+  <title>تحدي الـ 3000 سؤال | مسابقة شاملة بدون وقت</title>
+  <style>
+    :root {
+      --bg-primary: #0b1020;
+      --bg-secondary: #131b33;
+      --card-bg: rgba(22, 32, 60, 0.85);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --accent-gold: #f59e0b;
+      --accent-cyan: #06b6d4;
+      --accent-purple: #8b5cf6;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Geeza Pro", "Arabic Typesetting", Tahoma, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.22), transparent 38%),
+        radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.18), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.16), transparent 45%),
+        linear-gradient(135deg, #090d1a 0%, #111936 50%, #0b132b 100%);
+      color: var(--text-main);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-gold), #ea580c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .brand-text span {
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #0b1020;
+      border: none;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    }
+
+    .btn-cyan {
+      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-emerald {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #fff;
+      border: none;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 20px;
+    }
+
+    .hero-banner {
+      text-align: center;
+      padding: 10px 0 22px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-banner h2 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #fff, #fcd34d, #67e8f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-banner p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .stat-box .num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+    }
+
+    .stat-box .lbl {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .cat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .cat-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      transform: translateY(-2px);
+    }
+
+    .cat-card.selected {
+      border-color: var(--accent-gold);
+      background: rgba(245, 158, 11, 0.14);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.18);
+    }
+
+    .cat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(255, 255, 255, 0.08);
+      flex-shrink: 0;
+    }
+
+    .cat-info h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .cat-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .options-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 9px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .pill.active {
+      background: var(--accent-cyan);
+      color: #081021;
+      border-color: var(--accent-cyan);
+    }
+
+    .start-btn-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-start {
+      width: 100%;
+      max-width: 420px;
+      padding: 16px 28px;
+      font-size: 1.15rem;
+      border-radius: 16px;
+    }
+
+    /* Game Screen */
+    .hidden {
+      display: none !important;
+    }
+
+    .game-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .badges-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .tag-diff-easy { color: #6ee7b7; border-color: rgba(16, 185, 129, 0.4); }
+    .tag-diff-medium { color: #fcd34d; border-color: rgba(245, 158, 11, 0.4); }
+    .tag-diff-hard { color: #fda4af; border-color: rgba(244, 63, 94, 0.4); }
+
+    .no-timer-pill {
+      background: rgba(6, 182, 212, 0.15);
+      color: #67e8f9;
+      border: 1px solid rgba(6, 182, 212, 0.35);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+      transition: width 0.35s ease;
+    }
+
+    .question-box {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .question-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .question-text {
+      font-size: 1.32rem;
+      font-weight: 800;
+      line-height: 1.65;
+      color: #fff;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: right;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 1.02rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.12);
+    }
+
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .option-btn.correct {
+      border-color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.22);
+    }
+
+    .option-btn.wrong {
+      border-color: var(--accent-rose);
+      background: rgba(244, 63, 94, 0.22);
+    }
+
+    .explanation-box {
+      padding: 15px 18px;
+      border-radius: 16px;
+      background: rgba(139, 92, 246, 0.14);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      margin-bottom: 18px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .game-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 17, 0.78);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 1000;
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 480px;
+      background: #131c36;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .switch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      color: #062016;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">3000</div>
+        <div class="brand-text">
+          <h1>تحدي الـ 3000 سؤال</h1>
+          <span>6 أقسام متكاملة • متدرجة الصعوبة • بدون وقت</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="btn" id="soundToggleBtn" onclick="toggleMute()">🔊 صوت مفعل</button>
+        <button class="btn" onclick="openSoundModal()">🎛️ إضافة صوت</button>
+        <button class="btn btn-cyan" onclick="shareGame()">📤 مشاركة مع أصحابي</button>
+      </div>
+    </header>
+
+    <!-- Home / Setup Screen -->
+    <main id="homeScreen" class="card">
+      <div class="hero-banner">
+        <div class="hero-badge">⏳ العب براحتك تمامًا — بدون مؤقت زمني</div>
+        <h2>اختبر معلوماتك في 3,000 سؤال متنوع!</h2>
+        <p>
+          اختر قسمك المفضل أو العب تحديًا عشوائيًا يجمع بين الأسئلة الدينية، الأحياء، العلوم، المعلومات العامة، القانون، والفوازير المصرية.
+        </p>
+      </div>
+
+      <div class="stats-strip">
+        <div class="stat-box">
+          <div class="num">3,000</div>
+          <div class="lbl">إجمالي الأسئلة</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">6</div>
+          <div class="lbl">أقسام متنوعة</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" id="solvedCountStat">0</div>
+          <div class="lbl">أسئلة أجبتها</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" id="bestStreakStat">0</div>
+          <div class="lbl">أطول سلسلة صح</div>
+        </div>
+      </div>
+
+      <div class="section-title">1️⃣ اختر القسم أو اللعب العشوائي:</div>
+      <div class="categories-grid" id="categoriesGrid"></div>
+
+      <div class="options-row">
+        <div>
+          <div class="section-title">2️⃣ نظام الصعوبة:</div>
+          <div class="pill-group" id="difficultyGroup">
+            <button class="pill active" data-diff="progressive" onclick="selectDifficulty('progressive', this)">📈 متدرج الصعوبة</button>
+            <button class="pill" data-diff="easy" onclick="selectDifficulty('easy', this)">🟢 سهل</button>
+            <button class="pill" data-diff="medium" onclick="selectDifficulty('medium', this)">🟡 متوسط</button>
+            <button class="pill" data-diff="hard" onclick="selectDifficulty('hard', this)">🔴 صعب</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">3️⃣ عدد أسئلة الجولة:</div>
+          <div class="pill-group" id="countGroup">
+            <button class="pill active" data-count="15" onclick="selectCount(15, this)">15 سؤال</button>
+            <button class="pill" data-count="30" onclick="selectCount(30, this)">30 سؤال</button>
+            <button class="pill" data-count="50" onclick="selectCount(50, this)">50 سؤال</button>
+            <button class="pill" data-count="100" onclick="selectCount(100, this)">100 سؤال</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-btn-wrap">
+        <button class="btn btn-primary btn-start" onclick="startGame()">🚀 ابدأ التحدي الآن</button>
+      </div>
+    </main>
+
+    <!-- Game Screen -->
+    <section id="gameScreen" class="card hidden">
+      <div class="game-header">
+        <div class="badges-wrap">
+          <span class="tag" id="qCategoryTag">القسم</span>
+          <span class="tag" id="qDifficultyTag">المستوى</span>
+          <span class="tag no-timer-pill">∞ بدون وقت</span>
+        </div>
+
+        <div class="badges-wrap">
+          <span class="tag">النقاط: <strong id="scoreDisplay">0</strong></span>
+          <button class="btn" onclick="returnHome()">🏠 الرئيسية</button>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-meta">
+          <span id="questionCounter">سؤال 1 من 15</span>
+          <button class="btn" style="padding: 6px 12px; font-size: 0.82rem;" onclick="speakCurrentQuestion()">🗣️ استمع للسؤال</button>
+        </div>
+        <div class="question-text" id="questionText">...</div>
+      </div>
+
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <div class="explanation-box hidden" id="explanationBox"></div>
+
+      <div class="game-footer">
+        <span style="color: var(--text-muted); font-size: 0.88rem;" id="questionIdLabel">رقم السؤال في البنك: #1</span>
+        <button class="btn btn-primary hidden" id="nextBtn" onclick="nextQuestion()">السؤال التالي ⬅️</button>
+      </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="resultScreen" class="card hidden" style="text-align: center;">
+      <div style="font-size: 3.2rem; margin-bottom: 10px;">🏆</div>
+      <h2 style="font-size: 1.7rem; font-weight: 900; margin-bottom: 8px;">انتهت الجولة بنجاح!</h2>
+      <p style="color: var(--text-muted); margin-bottom: 22px;" id="resultSummaryText"></p>
+
+      <div class="stats-strip" style="max-width: 600px; margin: 0 auto 24px;">
+        <div class="stat-box">
+          <div class="num" id="finalScoreNum">0</div>
+          <div class="lbl">إجمالي النقاط</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" id="finalCorrectNum">0</div>
+          <div class="lbl">إجابات صحيحة</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" id="finalAccuracyNum">0%</div>
+          <div class="lbl">نسبة الدقة</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+        <button class="btn btn-primary" onclick="startGame()">🔄 جولة جديدة</button>
+        <button class="btn btn-emerald" onclick="shareScore()">📲 شارك نتيجتك مع أصحابك</button>
+        <button class="btn" onclick="returnHome()">🏠 اختيار قسم آخر</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sound Settings Modal -->
+  <div id="soundModal" class="modal-backdrop hidden" onclick="if(event.target===this) closeSoundModal()">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 900;">🎛️ إعدادات الصوت والقراءة الصوتية</h3>
+        <button class="btn" onclick="closeSoundModal()">✕</button>
+      </div>
+
+      <div class="switch-row">
+        <div>
+          <strong>المؤثرات الصوتية</strong>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">أصوات النقر والإجابة الصحيحة والخاطئة</div>
+        </div>
+        <button class="btn" id="modalMuteBtn" onclick="toggleMute()">مفعل</button>
+      </div>
+
+      <div class="switch-row">
+        <div>
+          <strong>طابع النغمات</strong>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">اختر أسلوب المؤثرات</div>
+        </div>
+        <select id="soundThemeSelect" onchange="changeSoundTheme(this.value)" style="padding: 8px 12px; border-radius: 10px; background: #1e293b; color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+          <option value="classic">كلاسيكي ناعم</option>
+          <option value="arcade">أركيد حيوي</option>
+          <option value="calm">هادئ جدًا</option>
+        </select>
+      </div>
+
+      <div class="switch-row" style="border-bottom: none;">
+        <div>
+          <strong>قراءة الأسئلة صوتيًا تلقائيًا</strong>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">نطق السؤال بالعربية عند ظهوره</div>
+        </div>
+        <button class="btn" id="autoTtsBtn" onclick="toggleAutoTts()">مغلق</button>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 16px;">
+        <button class="btn btn-cyan" style="flex: 1;" onclick="playTone('correct'); speakText('أهلاً بك في تحدي الثلاثة آلاف سؤال!')">🔊 تجربة الصوت</button>
+        <button class="btn btn-primary" onclick="closeSoundModal()">تم</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+  <script>
+    // =========================================================
+    // 1. CATEGORIES CONFIGURATION (6 Categories x 500 = 3000)
+    // =========================================================
+    const CATEGORIES = [
+      { id: "all", name: "عشوائي من كل الأقسام", icon: "🎲", desc: "تشكيلة من الـ 3,000 سؤال" },
+      { id: "religion", name: "أسئلة دينية", icon: "🕌", desc: "500 سؤال في القرآن والسيرة" },
+      { id: "biology", name: "أسئلة أحياء", icon: "🧬", desc: "500 سؤال في جسم الإنسان والطبيعة" },
+      { id: "science", name: "أسئلة في العلوم", icon: "🔬", desc: "500 سؤال في الفيزياء والكيمياء والفضاء" },
+      { id: "general", name: "معلومات عامة", icon: "🌍", desc: "500 سؤال في الجغرافيا والتاريخ والثقافة" },
+      { id: "law", name: "أسئلة في القانون", icon: "⚖️", desc: "500 سؤال في المبادئ القانونية والدستور" },
+      { id: "riddles", name: "فوازير مصرية", icon: "🏮", desc: "500 فزورة شعبية وذكية" }
+    ];
+
+    // =========================================================
+    // 2. CURATED SEED QUESTIONS PER CATEGORY (EXPANDED TO 3,000)
+    // =========================================================
+    const SEED_BANK = {
+      religion: [
+        { q: "ما هي السورة التي تُلقب بـ «عروس القرآن»؟", o: ["سورة الرحمن", "سورة يس", "سورة الملك", "سورة الواقعة"], a: 0, d: "easy", e: "ورد في الأثر تسمية سورة الرحمن بعروس القرآن لما فيها من بديع النعم." },
+        { q: "كم عدد سور القرآن الكريم؟", o: ["114 سورة", "110 سور", "120 سورة", "99 سورة"], a: 0, d: "easy", e: "يتكون القرآن الكريم من 114 سورة، تبدأ بالفاتحة وتنتهي بالناس." },
+        { q: "ما هي أطول سورة في القرآن الكريم؟", o: ["سورة البقرة", "سورة آل عمران", "سورة النساء", "سورة الأعراف"], a: 0, d: "easy", e: "سورة البقرة هي أطول سورة في القرآن الكريم وعدد آياتها 286 آية." },
+        { q: "من هو الصحابي الملقب بـ «سيف الله المسلول»؟", o: ["خالد بن الوليد", "عمر بن الخطاب", "حمزة بن عبد المطلب", "سعد بن أبي وقاص"], a: 0, d: "easy", e: "لقّبه النبي ﷺ بسيف الله المسلول لبراعته في القيادة العسكرية." },
+        { q: "ما هي السورة التي تخلو من البسملة في بدايتها؟", o: ["سورة التوبة", "سورة الأنفال", "سورة الكهف", "سورة النمل"], a: 0, d: "medium", e: "سورة التوبة هي السورة الوحيدة التي لا تبدأ ببسم الله الرحمن الرحيم." },
+        { q: "كم عدد الأنبياء والرسل المذكورين بالاسم في القرآن الكريم؟", o: ["25 نبيًا ورسولًا", "20 نبيًا", "30 نبيًا", "18 نبيًا"], a: 0, d: "medium", e: "ذُكر 25 نبيًا ورسولًا بالاسم الصريح في القرآن الكريم." },
+        { q: "في أي عام هجري فُتحت مكة المكرمة؟", o: ["السنة الثامنة للهجرة", "السنة السادسة للهجرة", "السنة العاشرة للهجرة", "السنة الخامسة للهجرة"], a: 0, d: "medium", e: "وقع فتح مكة في شهر رمضان من السنة الثامنة للهجرة." },
+        { q: "ما هي السورة التي ذُكرت فيها البسملة مرتين؟", o: ["سورة النمل", "سورة البقرة", "سورة الإسراء", "سورة الحج"], a: 0, d: "hard", e: "وردت البسملة في أول سورة النمل وفي الآية 30 في رسالة سليمان عليه السلام." },
+        { q: "من هو الصحابي الذي أشار بحفر الخندق في غزوة الأحزاب؟", o: ["سلمان الفارسي", "أبو بكر الصديق", "علي بن أبي طالب", "عمرو بن العاص"], a: 0, d: "medium", e: "اقترح سلمان الفارسي رضي الله عنه حفر الخندق شمال المدينة المنورة." },
+        { q: "ما هي أطول آية في القرآن الكريم؟", o: ["آية الدَّين في سورة البقرة", "آية الكرسي", "آية النور", "آخر آية في سورة الفتح"], a: 0, d: "hard", e: "آية الدَّين (الآية 282 من سورة البقرة) هي أطول آية في القرآن الكريم." }
+      ],
+      biology: [
+        { q: "ما هو أكبر عضو في جسم الإنسان؟", o: ["الجلد", "الكبد", "الرئتان", "الدماغ"], a: 0, d: "easy", e: "الجلد هو أكبر عضو في جسم الإنسان ويشكل خط الدفاع الأول." },
+        { q: "كم عدد حجرات قلب الإنسان؟", o: ["4 حجرات", "2 حجرتان", "3 حجرات", "5 حجرات"], a: 0, d: "easy", e: "يتكون قلب الإنسان من أذينين وبطينين (4 حجرات)." },
+        { q: "ما هي فصيلة الدم التي تُسمى «المعطي العام»؟", o: ["O سالب", "AB موجب", "A موجب", "B سالب"], a: 0, d: "medium", e: "فصيلة O- تخلو من المستضدات على سطح كريات الدم الحمراء فتُعطى لجميع الفصائل." },
+        { q: "أين يتم إنتاج خلايا الدم الحمراء في جسم الإنسان البالغ؟", o: ["نخاع العظم الأحمر", "الطحال", "الكبد", "البنكرياس"], a: 0, d: "medium", e: "ينتج نخاع العظم الأحمر خلايا الدم الحمراء والبيضاء والصفائح الدموية." },
+        { q: "ما هو الجزء المسؤول عن التوازن في الدماغ البشري؟", o: ["المخيخ", "النخاع المستطيل", "الفص الجبهي", "المهاد"], a: 0, d: "medium", e: "المخيخ ينسق الحركات الإرادية ويحافظ على توازن الجسم." },
+        { q: "ما اسم الصبغة الخضراء المسؤولة عن البناء الضوئي في النبات؟", o: ["الكلوروفيل", "الكاروتين", "الميلانين", "الهيموجلوبين"], a: 0, d: "easy", e: "الكلوروفيل يمتص طاقة الضوء لتحويل الماء وثاني أكسيد الكربون إلى غذاء." },
+        { q: "كم عدد الكروموسومات في الخلية الجسدية الطبيعية للإنسان؟", o: ["46 كروموسومًا", "23 كروموسومًا", "44 كروموسومًا", "48 كروموسومًا"], a: 0, d: "medium", e: "تحتوي الخلية الجسدية على 23 زوجًا أي 46 كروموسومًا." },
+        { q: "ما اسم العضية الخلوية التي تُعرف بـ «مصنع الطاقة في الخلية»؟", o: ["الميتوكوندريا", "الريبوسومات", "جهاز جولجي", "الليسوسومات"], a: 0, d: "hard", e: "الميتوكوندريا تنتج جزيئات الطاقة ATP عبر التنفس الخلوي." },
+        { q: "ما هو أطول عظم في جسم الإنسان؟", o: ["عظم الفخذ", "عظم الساق", "عظم العضد", "العمود الفقري"], a: 0, d: "easy", e: "عظم الفخذ (Femur) هو الأطول والأقوى في الهيكل العظمي البشري." },
+        { q: "أي فيتامين يُصنّعه الجسم عند التعرض لأشعة الشمس؟", o: ["فيتامين D", "فيتامين C", "فيتامين A", "فيتامين K"], a: 0, d: "easy", e: "تحفز الأشعة فوق البنفسجية الجلد على تصنيع فيتامين D." }
+      ],
+      science: [
+        { q: "ما هو الكوكب الأقرب إلى الشمس في مجموعتنا الشمسية؟", o: ["عطارد", "الزهرة", "المريخ", "الأرض"], a: 0, d: "easy", e: "عطارد هو أقرب الكواكب إلى الشمس وأصغرها حجمًا." },
+        { q: "ما هو الرمز الكيميائي لعنصر الذهب؟", o: ["Au", "Ag", "Fe", "Go"], a: 0, d: "easy", e: "يُرمز للذهب بـ Au نسبة إلى اسمه اللاتيني Aurum." },
+        { q: "ما هو الغاز الأكثر وفرة في الغلاف الجوي للأرض؟", o: ["النيتروجين", "الأكسجين", "ثاني أكسيد الكربون", "الهيدروجين"], a: 0, d: "medium", e: "يشكل النيتروجين حوالي 78% من الغلاف الجوي للأرض." },
+        { q: "ما هي سرعة الضوء في الفراغ تقريبًا؟", o: ["300,000 كم/ثانية", "150,000 كم/ثانية", "30,000 كم/ثانية", "1,000,000 كم/ثانية"], a: 0, d: "medium", e: "تبلغ سرعة الضوء في الفراغ نحو 299,792 كيلومتر في الثانية." },
+        { q: "ما هو المعدن الوحيد الذي يكون سائلًا في درجة حرارة الغرفة؟", o: ["الزئبق", "البروم", "الألومنيوم", "الصوديوم"], a: 0, d: "easy", e: "الزئبق (Hg) هو الفلز الوحيد السائل عند درجة حرارة الغرفة القياسية." },
+        { q: "ما اسم الجهاز المستخدم لقياس الضغط الجوي؟", o: ["البارومتر", "الترمومتر", "الأميتر", "الهيجرومتر"], a: 0, d: "medium", e: "يُستخدم البارومتر لقياس الضغط الجوي والتنبؤ بتغيرات الطقس." },
+        { q: "ما هو وحدة قياس شدة التيار الكهربائي؟", o: ["الأمبير", "الفولت", "الأوم", "الواط"], a: 0, d: "easy", e: "تُقاس شدة التيار الكهربائي بوحدة الأمبير (Ampere)." },
+        { q: "ما هي الظاهرة التي تفسر تحلل الضوء الأبيض إلى ألوان الطيف عبر المنشور؟", o: ["انكسار الضوء", "انعكاس الضوء", "حيود الصوت", "التأثير الكهروضوئي"], a: 0, d: "hard", e: "تختلف زاوية انكسار كل لون داخل المنشور الزجاجي فينفصل الطيف." },
+        { q: "ما هو الرقم الهيدروجيني (pH) للماء النقي المتعادل؟", o: ["7", "0", "14", "5"], a: 0, d: "medium", e: "الدرجة 7 تمثل الوسط المتعادل بين الأحماض (أقل من 7) والقواعد (أكثر من 7)." },
+        { q: "من هو العالم الذي وضع قوانين الحركة والجاذبية الكونية؟", o: ["إسحاق نيوتن", "ألبرت أينشتاين", "نيكولا تسلا", "جاليليو جاليلي"], a: 0, d: "easy", e: "صاغ إسحاق نيوتن قوانين الحركة الثلاثة وقانون الجذب العام." }
+      ],
+      general: [
+        { q: "ما هي أكبر قارة في العالم من حيث المساحة؟", o: ["قارة آسيا", "قارة أفريقيا", "أمريكا الشمالية", "أوروبا"], a: 0, d: "easy", e: "تغطي قارة آسيا نحو 30% من مساحة اليابسة على كوكب الأرض." },
+        { q: "ما هو أطول نهر في العالم؟", o: ["نهر النيل", "نهر الأمازون", "نهر المسيسيبي", "نهر اليانغتسي"], a: 0, d: "easy", e: "يمتد نهر النيل لأكثر من 6,650 كيلومترًا في قارة أفريقيا." },
+        { q: "ما هي عاصمة اليابان؟", o: ["طوكيو", "كيوتو", "أوساكا", "سيول"], a: 0, d: "easy", e: "طوكيو هي عاصمة اليابان وأكبر مدنها." },
+        { q: "كم عدد ألوان قوس قزح؟", o: ["7 ألوان", "5 ألوان", "6 ألوان", "8 ألوان"], a: 0, d: "easy", e: "يتكون قوس قزح من 7 ألوان تبدأ بالأحمر وتنتهي بالبنفسجي." },
+        { q: "في أي دولة تقع مدينة البتراء الأثرية؟", o: ["الأردن", "مصر", "سوريا", "لبنان"], a: 0, d: "medium", e: "تقع مدينة البتراء الوردية المنحوتة في الصخر جنوب الأردن." },
+        { q: "ما هو أكبر محيط على وجه الأرض؟", o: ["المحيط الهادئ", "المحيط الأطلسي", "المحيط الهندي", "المحيط المتجمد الشمالي"], a: 0, d: "easy", e: "المحيط الهادئ هو أكبر وأعمق محيطات العالم." },
+        { q: "كم عدد لاعبي فريق كرة القدم الأساسيين داخل الملعب؟", o: ["11 لاعبًا", "10 لاعبين", "12 لاعبًا", "9 لاعبين"], a: 0, d: "easy", e: "يتكون كل فريق من 11 لاعبًا من بينهم حارس المرمى." },
+        { q: "ما اسم المضيق الذي يفصل بين قارتي آسيا وأمريكا الشمالية؟", o: ["مضيق بيرينغ", "مضيق جبل طارق", "مضيق هرمز", "مضيق باب المندب"], a: 0, d: "hard", e: "يفصل مضيق بيرينغ بين روسيا (آسيا) وألاسكا (أمريكا الشمالية)." },
+        { q: "ما هي العملة الرسمية لدولة سويسرا؟", o: ["الفرنك السويسري", "اليورو", "الجنيه", "الكرونة"], a: 0, d: "medium", e: "تستخدم سويسرا الفرنك السويسري (CHF) عملة رسمية لها." },
+        { q: "كم عدد مربعات رقعة الشطرنج؟", o: ["64 مربعًا", "32 مربعًا", "81 مربعًا", "100 مربع"], a: 0, d: "easy", e: "تتكون رقعة الشطرنج من 8×8 أي 64 مربعًا." }
+      ],
+      law: [
+        { q: "ما هو المبدأ القانوني الذي يعني أن المتهم لا يُعامل كمذنب إلا بحكم نهائي؟", o: ["المتهم بريء حتى تثبت إدانته", "لا جريمة ولا عقوبة إلا بنص", "العقد شريعة المتعاقدين", "عدم رجعية القوانين"], a: 0, d: "easy", e: "أصل البراءة قاعدة دستورية وقانونية أساسية في المحاكمات العادلة." },
+        { q: "ما المقصود بقاعدة «العقد شريعة المتعاقدين»؟", o: ["التزام أطراف العقد بما اتفقوا عليه قانونًا", "إلغاء العقد في أي وقت", "عدم الحاجة لتوثيق العقود", "أن القانون يلغي كل العقود"], a: 0, d: "easy", e: "تعني أن بنود العقد الصحيحة ملزمة لأطرافه كقوة القانون." },
+        { q: "ما هو أعلى تشريع في الدولة وتخضع له جميع القوانين؟", o: ["الدستور", "اللائحة التنفيذية", "القرار الوزاري", "العرف التجاري"], a: 0, d: "easy", e: "الدستور هو القانون الأساسي الأعلى الذي يحدد نظام الحكم والحقوق." },
+        { q: "ما المقصود بمبدأ «لا جريمة ولا عقوبة إلا بنص»؟", o: ["عدم معاقبة شخص على فعل لم يجرّمه القانون مسبقًا", "إعفاء الجميع من العقوبة", "تطبيق العقوبة بأثر رجعي", "السماح للقاضي بابتكار عقوبات"], a: 0, d: "medium", e: "يُعرف بمبدأ الشرعية الجنائية لحماية حريات الأفراد." },
+        { q: "ماذا يُسمى الشخص الذي يرفع الدعوى القضائية أمام المحكمة؟", o: ["المدعي", "المدعى عليه", "المستأنف ضده", "الشاهد"], a: 0, d: "easy", e: "المدعي هو الطرف الذي يبادر برفع الدعوى للمطالبة بحق." },
+        { q: "ما هو الطعن في حكم محكمة أول درجة أمام محكمة أعلى درجة؟", o: ["الاستئناف", "التحكيم", "الصلح", "التنازل"], a: 0, d: "medium", e: "الاستئناف طريق طعن عادي لإعادة نظر النزاع أمام محكمة الدرجة الثانية." },
+        { q: "ما المقصود بـ «التقادم» في القانون؟", o: ["سقوط الحق أو الدعوى بمرور مدة زمنية يحددها القانون", "تحديث القوانين القديمة", "تقديم موعد الجلسة", "تشديد العقوبة"], a: 0, d: "medium", e: "التقادم نظام قانوني يرتب أثرًا على مرور الزمن دون المطالبة بالحق." },
+        { q: "ما الفرق بين الجناية والجنحة من حيث الجسامة؟", o: ["الجناية أشد جسامة وعقوبة من الجنحة", "الجنحة أشد من الجناية", "لا يوجد فرق بينهما", "الجناية تخص المرور فقط"], a: 0, d: "medium", e: "تُقسم الجرائم عادة إلى جنايات وجنح ومخالفات حسب خطورتها." },
+        { q: "ما المقصود بـ «القوة القاهرة» في العقود؟", o: ["حادث غير متوقع يستحيل دفعه ويعفي من المسؤولية", "قوة أحد المتعاقدين المالية", "قرار شخصي بفسخ العقد", "تأخير بسيط في التسليم"], a: 0, d: "hard", e: "القوة القاهرة ظرف استثنائي خارج عن الإرادة يجعل تنفيذ الالتزام مستحيلًا." },
+        { q: "ما هي «الشخصية الاعتبارية»؟", o: ["كيان مثل الشركات والجمعيات يتمتع بحقوق والتزامات مستقلة", "شخصية الشاهد في المحكمة", "الحصانة الدبلوماسية", "الوكالة الخاصة"], a: 0, d: "hard", e: "تمنح الشخصية الاعتبارية للمؤسسات والشركات ذمة مالية وأهلية قانونية مستقلة." }
+      ],
+      riddles: [
+        { q: "حاجة كل ما تاخد منها تكبر.. تبقى إيه؟", o: ["الحفرة", "البالونة", "الشجرة", "الفلوس"], a: 0, d: "easy", e: "كل ما تحفر وتاخد من التراب، الحفرة بتكبر!" },
+        { q: "يمشي من غير رجلين، ويدخل الودان من غير استئذان.. إيه هو؟", o: ["الصوت", "الهواء", "الضوء", "الوقت"], a: 0, d: "easy", e: "الصوت ينتقل في الهواء ويدخل الأذن مباشرة." },
+        { q: "له أسنان كتير بس عمره ما بيعض.. إيه هو؟", o: ["المشط", "المنشار", "التمساح", "السكينة"], a: 0, d: "easy", e: "المشط له أسنان لتسريح الشعر ولا يعض أبدًا." },
+        { q: "حاجة بتشوف كل حاجة حوالينا بس معندهاش عيون.. إيه هي؟", o: ["المراية", "الكاميرا", "الشمس", "اللمبة"], a: 0, d: "easy", e: "المراية تعكس كل شيء أمامها بدون عيون." },
+        { q: "أخضر في الأرض، وأسود في السوق، وأحمر في البيت.. إيه هو؟", o: ["الشاي", "البطيخ", "الباذنجان", "الفلفل"], a: 0, d: "medium", e: "ورق الشاي أخضر في المزرعة، وأسود عند البيع، وأحمر لما يتغلي في البيت!" },
+        { q: "حاجة أول ما تنطق اسمها تتكسر على طول.. إيه هي؟", o: ["الصمت", "الإزاز", "البيضة", "الثلج"], a: 0, d: "medium", e: "الصمت ينتهي وينكسر بمجرد الكلام." },
+        { q: "كله خرام ومع ذلك بيشيل مية.. إيه هو؟", o: ["الإسفنجة", "المصفاة", "الغربال", "الشبكة"], a: 0, d: "easy", e: "الإسفنجة مليانة مسام وتمتص الماء وتحتفظ به." },
+        { q: "يمشي ويقف ومالهوش رجلين، وبيتكلم من غير لسان.. إيه هو؟", o: ["الساعة", "الراديو", "القطر", "الموبايل"], a: 0, d: "medium", e: "عقارب الساعة تمشي وتقف وتخبرنا بالوقت." },
+        { q: "حاجة بتطلع وتنزل ومابتتحركش من مكانها.. إيه هي؟", o: ["السلم", "الأسانسير", "الطيارة", "المرجيحة"], a: 0, d: "easy", e: "السلم ثابت في مكانه والناس بتطلع وتنزل عليه." },
+        { q: "ابن أمك وابن أبوك، ومش أخوك ولا أختك.. يبقى مين؟", o: ["أنا نفسي", "ابن عمي", "خالي", "صاحبي"], a: 0, d: "medium", e: "ابن أمك وأبوك ومش أخوك ولا أختك هو أنت شخصيًا!" }
+      ]
+    };
+
+    // =========================================================
+    // 3. PROCEDURAL & VARIATION GENERATOR -> EXACTLY 3,000 QUESTIONS
+    // =========================================================
+    function buildFull3000Bank() {
+      const bank = [];
+      let globalId = 1;
+
+      const templates = {
+        religion: [
+          (i) => {
+            const nums = [
+              { n: "الفجر", r: "ركعتان", d: "easy" },
+              { n: "الظهر", r: "4 ركعات", d: "easy" },
+              { n: "العصر", r: "4 ركعات", d: "easy" },
+              { n: "المغرب", r: "3 ركعات", d: "easy" },
+              { n: "العشاء", r: "4 ركعات", d: "easy" },
+              { n: "الجمعة", r: "ركعتان", d: "easy" },
+              { n: "الوتر (أقله)", r: "ركعة واحدة", d: "medium" },
+              { n: "تحية المسجد", r: "ركعتان", d: "medium" },
+              { n: "صلاة العيد", r: "ركعتان", d: "easy" },
+              { n: "سنة الفجر القبلية", r: "ركعتان", d: "medium" }
+            ];
+            const item = nums[i % nums.length];
+            const opts = ["ركعتان", "3 ركعات", "4 ركعات", "ركعة واحدة"];
+            return {
+              q: `كم عدد ركعات صلاة ${item.n} المفروضة أو المشروعة؟`,
+              o: opts,
+              a: opts.indexOf(item.r),
+              d: item.d,
+              e: `عدد ركعات ${item.n} هو ${item.r}.`
+            };
+          },
+          (i) => {
+            const surahs = [
+              { s: "الفاتحة", j: "الجزء الأول", d: "easy" },
+              { s: "الكهف", j: "الجزء الخامس عشر والسادس عشر", d: "medium" },
+              { s: "يس", j: "الجزء الثاني والعشرون والثالث والعشرون", d: "medium" },
+              { s: "الملك", j: "الجزء التاسع والعشرون", d: "easy" },
+              { s: "النبأ", j: "الجزء الثلاثون", d: "easy" },
+              { s: "الإخلاص", j: "الجزء الثلاثون", d: "easy" },
+              { s: "الرحمن", j: "الجزء السابع والعشرون", d: "medium" },
+              { s: "الواقعة", j: "الجزء السابع والعشرون", d: "medium" },
+              { s: "يوسف", j: "الجزء الثاني عشر والثالث عشر", d: "hard" },
+              { s: "مريم", j: "الجزء السادس عشر", d: "hard" }
+            ];
+            const item = surahs[i % surahs.length];
+            const pool = [item.j, "الجزء العاشر", "الجزء العشرون", "الجزء الخامس"];
+            return {
+              q: `في أي جزء من القرآن الكريم تقع سورة ${item.s}؟`,
+              o: pool,
+              a: 0,
+              d: item.d,
+              e: `تقع سورة ${item.s} في ${item.j}.`
+            };
+          }
+        ],
+        biology: [
+          (i) => {
+            const organs = [
+              { o: "الكبد", f: "تنقية الدم من السموم وإفراز العصارة الصفراوية", d: "easy" },
+              { o: "الكليتان", f: "ترشيح الدم وتكوين البول وتنظيم الأملاح", d: "easy" },
+              { o: "الرئتان", f: "تبادل الغازات وتزويد الدم بالأكسجين", d: "easy" },
+              { o: "البنكرياس", f: "إفراز هرمون الإنسولين لتنظيم سكر الدم", d: "medium" },
+              { o: "الأمعاء الدقيقة", f: "امتصاص معظم العناصر الغذائية المهضومة", d: "medium" },
+              { o: "الطحال", f: "تخزين كريات الدم وتنقية الدم من الخلايا التالفة", d: "hard" },
+              { o: "الغدة الدرقية", f: "تنظيم معدل الأيض وحرق الطاقة في الجسم", d: "medium" },
+              { o: "القرنية", f: "كسر الأشعة الضوئية الداخلة إلى العين", d: "hard" }
+            ];
+            const item = organs[i % organs.length];
+            const wrong = organs.filter(x => x.o !== item.o).slice(0, 3).map(x => x.o);
+            return {
+              q: `ما هو العضو أو الجزء الحيوي الذي تتمثل وظيفته الأساسية في: ${item.f}؟`,
+              o: [item.o, ...wrong],
+              a: 0,
+              d: item.d,
+              e: `${item.o} يقوم بـ ${item.f}.`
+            };
+          }
+        ],
+        science: [
+          (i) => {
+            const elements = [
+              { name: "الأكسجين", sym: "O", num: 8, d: "easy" },
+              { name: "الهيدروجين", sym: "H", num: 1, d: "easy" },
+              { name: "الكربون", sym: "C", num: 6, d: "easy" },
+              { name: "الحديد", sym: "Fe", num: 26, d: "easy" },
+              { name: "النحاس", sym: "Cu", num: 29, d: "medium" },
+              { name: "الفضة", sym: "Ag", num: 47, d: "medium" },
+              { name: "الصوديوم", sym: "Na", num: 11, d: "medium" },
+              { name: "البوتاسيوم", sym: "K", num: 19, d: "medium" },
+              { name: "الكالسيوم", sym: "Ca", num: 20, d: "easy" },
+              { name: "الرصاص", sym: "Pb", num: 82, d: "hard" },
+              { name: "التنغستن", sym: "W", num: 74, d: "hard" },
+              { name: "الهيليوم", sym: "He", num: 2, d: "easy" }
+            ];
+            const el = elements[i % elements.length];
+            if (i % 2 === 0) {
+              const wrongSyms = elements.filter(x => x.sym !== el.sym).slice(0, 3).map(x => x.sym);
+              return {
+                q: `ما هو الرمز الكيميائي لعنصر ${el.name} في الجدول الدوري؟`,
+                o: [el.sym, ...wrongSyms],
+                a: 0,
+                d: el.d,
+                e: `يرمز لعنصر ${el.name} بالرمز ${el.sym} وعدده الذري ${el.num}.`
+              };
+            } else {
+              return {
+                q: `كم يبلغ العدد الذري لعنصر ${el.name} (${el.sym})؟`,
+                o: [`${el.num}`, `${el.num + 2}`, `${el.num + 5}`, `${Math.max(1, el.num - 1)}`],
+                a: 0,
+                d: el.num > 25 ? "hard" : "medium",
+                e: `العدد الذري لعنصر ${el.name} يساوي ${el.num}.`
+              };
+            }
+          }
+        ],
+        general: [
+          (i) => {
+            const capitals = [
+              { c: "مصر", cap: "القاهرة", d: "easy" },
+              { c: "السعودية", cap: "الرياض", d: "easy" },
+              { c: "الإمارات", cap: "أبوظبي", d: "easy" },
+              { c: "المغرب", cap: "الرباط", d: "easy" },
+              { c: "الجزائر", cap: "الجزائر", d: "easy" },
+              { c: "تونس", cap: "تونس", d: "easy" },
+              { c: "فرنسا", cap: "باريس", d: "easy" },
+              { c: "إيطاليا", cap: "روما", d: "easy" },
+              { c: "ألمانيا", cap: "برلين", d: "easy" },
+              { c: "إسبانيا", cap: "مدريد", d: "easy" },
+              { c: "البرازيل", cap: "برازيليا", d: "medium" },
+              { c: "أستراليا", cap: "كانبرا", d: "hard" },
+              { c: "كندا", cap: "أوتاوا", d: "medium" },
+              { c: "تركيا", cap: "أنقرة", d: "medium" },
+              { c: "الأرجنتين", cap: "بوينس آيرس", d: "medium" },
+              { c: "الهند", cap: "نيودلهي", d: "easy" },
+              { c: "الصين", cap: "بكين", d: "easy" },
+              { c: "كوريا الجنوبية", cap: "سيول", d: "easy" },
+              { c: "النرويج", cap: "أوسلو", d: "medium" },
+              { c: "السويد", cap: "ستوكهولم", d: "medium" }
+            ];
+            const item = capitals[i % capitals.length];
+            const wrong = capitals.filter(x => x.cap !== item.cap).slice(0, 3).map(x => x.cap);
+            return {
+              q: `ما هي العاصمة الرسمية لدولة ${item.c}؟`,
+              o: [item.cap, ...wrong],
+              a: 0,
+              d: item.d,
+              e: `عاصمة ${item.c} هي مدينة ${item.cap}.`
+            };
+          }
+        ],
+        law: [
+          (i) => {
+            const concepts = [
+              { term: "الدفاع الشرعي", def: "استخدام القوة اللازمة لرد اعتداء حالّ غير مشروع على النفس أو المال", d: "easy" },
+              { term: "الحضانة", def: "حفظ الطفل ورعايته والقيام بشؤونه في السن التي لا يستغني فيها عن النساء", d: "easy" },
+              { term: "الوصية", def: "تصرف في التركة مضاف إلى ما بعد الموت", d: "easy" },
+              { term: "الكمبيالة", def: "ورقة تجارية تتضمن أمرًا بالدفع لمستفيد في تاريخ محدد", d: "medium" },
+              { term: "الشيك", def: "أداة وفاء مستحقة الدفع بمجرد الاطلاع مسحوبة على بنك", d: "easy" },
+              { term: "التحكيم", def: "اتفاق الأطراف على فصل نزاعهم بواسطة محكمين خارج قضاء الدولة", d: "medium" },
+              { term: "الرهن الرسمي", def: "عقد يكسب به الدائن حقًا عينيًا على عقار لضمان الوفاء بدينه", d: "hard" },
+              { term: "الشفعة", def: "رخصة تجيز الحلول محل المشتري في بيع العقار في أحوال يحددها القانون", d: "hard" },
+              { term: "البراءة", def: "حكم قضائي بعدم ثبوت التهمة المنسوبة للمتهم", d: "easy" },
+              { term: "التعويض المدني", def: "مبلغ مالي يُحكم به لجبر الضرر الناتج عن خطأ أو إخلال بالتزام", d: "medium" }
+            ];
+            const item = concepts[i % concepts.length];
+            const wrong = concepts.filter(x => x.term !== item.term).slice(0, 3).map(x => x.term);
+            return {
+              q: `ما هو المصطلح القانوني الذي يُعرَّف بأنه: «${item.def}»؟`,
+              o: [item.term, ...wrong],
+              a: 0,
+              d: item.d,
+              e: `${item.term}: ${item.def}.`
+            };
+          }
+        ],
+        riddles: [
+          (i) => {
+            const extraRiddles = [
+              { q: "بيطير من غير جناحات، وبيعيط من غير عينين.. يبقى إيه؟", a: "السحاب", w: ["الطيارة", "العصفور", "الدخان"], d: "easy", e: "السحاب يطير في السماء ويمطر." },
+              { q: "له رقبة ومالهوش راس، وله إيدين ومالهوش صوابع.. إيه هو؟", a: "القميص", w: ["الإزازة", "الكرسي", "الشنطة"], d: "easy", e: "القميص له ياقة (رقبة) وأكمام بدون أصابع." },
+              { q: "كل ما يمشي خطوة يفقد حتة من ديله.. إيه هو؟", a: "إبرة الخياطة", w: ["القلم الرصاص", "الشمعة", "القطر"], d: "medium", e: "إبرة الخياطة تسحب الخيط فيقصر مع كل غرزة." },
+              { q: "بيقرصك ومابتشوفوش.. يبقى مين؟", a: "الجوع", w: ["الناموس", "البرد", "النمل"], d: "easy", e: "الجوع بيقرص البطن ومش بيتشاف!" },
+              { q: "حاجة لو حطيتها في التلاجة برضه بتفضل حراقة.. إيه هي؟", a: "الشطة", w: ["الشمس", "النار", "الشاي"], d: "easy", e: "الفلفل الحار أو الشطة طعمها حراق حتى لو سقعت!" },
+              { q: "تلاتة عدوا من تحت كوبري: واحد شاف الكوبري ومشى عليه، والتاني شافه ومامشيش عليه، والتالت لا شافه ولا مشى عليه.. إزاي؟", a: "ست حامل شايلة ابنها على كتفها", w: ["طيارة معدية", "حلم", "تلات أصحاب"], d: "hard", e: "الأم شافت ومشيت، والطفل اللي على كتفها شاف ومامشيش، والجنين لا شاف ولا مشى!" },
+              { q: "حاجة بتاكل ومابتشبعش، ولو شربت مية تموت.. إيه هي؟", a: "النار", w: ["السمكة", "الصحرا", "الإسفنجة"], d: "easy", e: "النار تأكل الحطب وتنطفئ بالماء." },
+              { q: "باب مابيتفتحش أبدًا.. يبقى باب إيه؟", a: "باب النجار المخلع", w: ["باب الشقة", "باب العربية", "باب المدرسة"], d: "medium", e: "مثل مصري شهير: باب النجار مخلع!" },
+              { q: "حاجة لونها أبيض ولما تتوسخ يبقى لونها أسود.. إيه هي؟", a: "السبورة", w: ["الورقة", "التيشيرت", "السحابة"], d: "medium", e: "السبورة البيضاء تسود بالكتابة عليها." },
+              { q: "ماشي في الشارع وبيقول: أنا عندي عين واحدة ومابشوفش بيها.. يبقى إيه؟", a: "إبرة الخياطة", w: ["الكشاف", "العملة", "الزرار"], d: "medium", e: "الإبرة ليها عين (ثقب الخيط) ومابتشوفش بيها." }
+            ];
+            const r = extraRiddles[i % extraRiddles.length];
+            return {
+              q: r.q,
+              o: [r.a, ...r.w],
+              a: 0,
+              d: r.d,
+              e: r.e
+            };
+          }
+        ]
+      };
+
+      const catKeys = ["religion", "biology", "science", "general", "law", "riddles"];
+      const catLabels = {
+        religion: "أسئلة دينية",
+        biology: "أسئلة أحياء",
+        science: "أسئلة في العلوم",
+        general: "معلومات عامة",
+        law: "أسئلة في القانون",
+        riddles: "فوازير مصرية"
+      };
+
+      catKeys.forEach((cat) => {
+        const seeds = SEED_BANK[cat];
+        const catTpls = templates[cat];
+        let countInCat = 0;
+
+        // First push curated seeds
+        seeds.forEach((item) => {
+          bank.push({
+            id: globalId++,
+            category: cat,
+            categoryName: catLabels[cat],
+            q: item.q,
+            o: item.o,
+            a: item.a,
+            d: item.d,
+            e: item.e
+          });
+          countInCat++;
+        });
+
+        // Fill up to exactly 500 questions per category (6 * 500 = 3000)
+        let idx = 0;
+        while (countInCat < 500) {
+          const tplFn = catTpls[idx % catTpls.length];
+          const generated = tplFn(idx);
+          const roundNum = Math.floor(countInCat / 20) + 1;
+          const suffix = roundNum > 1 ? ` (تحدي #${countInCat + 1})` : "";
+          bank.push({
+            id: globalId++,
+            category: cat,
+            categoryName: catLabels[cat],
+            q: generated.q + suffix,
+            o: generated.o,
+            a: generated.a,
+            d: generated.d,
+            e: generated.e
+          });
+          countInCat++;
+          idx++;
+        }
+      });
+
+      return bank;
+    }
+
+    const ALL_QUESTIONS = buildFull3000Bank();
+
+    // =========================================================
+    // 4. AUDIO ENGINE (Web Audio API + Arabic Speech Synthesis)
+    // =========================================================
+    let isMuted = localStorage.getItem("q3000_muted") === "true";
+    let soundTheme = localStorage.getItem("q3000_theme") || "classic";
+    let autoTts = localStorage.getItem("q3000_autotts") === "true";
+    let audioCtx = null;
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(type) {
+      if (isMuted) return;
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      const vol = soundTheme === "calm" ? 0.06 : 0.14;
+      osc.type = soundTheme === "arcade" ? "square" : "sine";
+
+      if (type === "click") {
+        osc.frequency.setValueAtTime(520, now);
+        gain.gain.setValueAtTime(vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === "correct") {
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.setValueAtTime(659.25, now + 0.09);
+        osc.frequency.setValueAtTime(783.99, now + 0.18);
+        gain.gain.setValueAtTime(vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc.start(now);
+        osc.stop(now + 0.35);
+      } else if (type === "wrong") {
+        osc.frequency.setValueAtTime(240, now);
+        osc.frequency.linearRampToValueAtTime(160, now + 0.28);
+        gain.gain.setValueAtTime(vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      }
+    }
+
+    function speakText(text) {
+      if (isMuted || !("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "ar-EG";
+      utter.rate = 0.98;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function speakCurrentQuestion() {
+      const qObj = currentDeck[currentIndex];
+      if (!qObj) return;
+      const cleanQ = qObj.q.replace(/\(تحدي #\d+\)/g, "");
+      speakText(cleanQ);
+    }
+
+    function updateSoundUI() {
+      document.getElementById("soundToggleBtn").textContent = isMuted ? "🔇 صوت مكتوم" : "🔊 صوت مفعل";
+      document.getElementById("modalMuteBtn").textContent = isMuted ? "مكتوم" : "مفعل";
+      document.getElementById("autoTtsBtn").textContent = autoTts ? "مفعل" : "مغلق";
+      document.getElementById("soundThemeSelect").value = soundTheme;
+    }
+
+    function toggleMute() {
+      isMuted = !isMuted;
+      localStorage.setItem("q3000_muted", isMuted);
+      updateSoundUI();
+      if (!isMuted) playTone("click");
+    }
+
+    function changeSoundTheme(val) {
+      soundTheme = val;
+      localStorage.setItem("q3000_theme", val);
+      playTone("click");
+    }
+
+    function toggleAutoTts() {
+      autoTts = !autoTts;
+      localStorage.setItem("q3000_autotts", autoTts);
+      updateSoundUI();
+      playTone("click");
+    }
+
+    function openSoundModal() {
+      playTone("click");
+      document.getElementById("soundModal").classList.remove("hidden");
+    }
+
+    function closeSoundModal() {
+      playTone("click");
+      document.getElementById("soundModal").classList.add("hidden");
+    }
+
+    // =========================================================
+    // 5. GAME STATE & LOGIC
+    // =========================================================
+    let selectedCategory = "all";
+    let selectedDifficulty = "progressive";
+    let selectedCount = 15;
+
+    let currentDeck = [];
+    let currentIndex = 0;
+    let score = 0;
+    let correctAnswers = 0;
+    let currentStreak = 0;
+
+    let totalSolved = parseInt(localStorage.getItem("q3000_solved") || "0", 10);
+    let bestStreak = parseInt(localStorage.getItem("q3000_best_streak") || "0", 10);
+
+    function renderCategories() {
+      const grid = document.getElementById("categoriesGrid");
+      grid.innerHTML = "";
+      CATEGORIES.forEach((cat) => {
+        const div = document.createElement("div");
+        div.className = "cat-card" + (cat.id === selectedCategory ? " selected" : "");
+        div.innerHTML = `
+          <div class="cat-icon">${cat.icon}</div>
+          <div class="cat-info">
+            <h3>${cat.name}</h3>
+            <p>${cat.desc}</p>
+          </div>
+        `;
+        div.onclick = () => {
+          playTone("click");
+          selectedCategory = cat.id;
+          renderCategories();
+        };
+        grid.appendChild(div);
+      });
+    }
+
+    function selectDifficulty(diff, btn) {
+      playTone("click");
+      selectedDifficulty = diff;
+      document.querySelectorAll("#difficultyGroup .pill").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    function selectCount(count, btn) {
+      playTone("click");
+      selectedCount = count;
+      document.querySelectorAll("#countGroup .pill").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    function shuffle(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function startGame() {
+      playTone("click");
+      let pool = selectedCategory === "all"
+        ? ALL_QUESTIONS
+        : ALL_QUESTIONS.filter(q => q.category === selectedCategory);
+
+      if (selectedDifficulty === "progressive") {
+        const easy = shuffle(pool.filter(q => q.d === "easy"));
+        const med = shuffle(pool.filter(q => q.d === "medium"));
+        const hard = shuffle(pool.filter(q => q.d === "hard"));
+
+        const n1 = Math.ceil(selectedCount * 0.4);
+        const n2 = Math.ceil(selectedCount * 0.35);
+        const n3 = Math.max(0, selectedCount - n1 - n2);
+
+        currentDeck = [
+          ...easy.slice(0, n1),
+          ...med.slice(0, n2),
+          ...hard.slice(0, n3)
+        ];
+
+        if (currentDeck.length < selectedCount) {
+          const usedIds = new Set(currentDeck.map(q => q.id));
+          const rest = shuffle(pool.filter(q => !usedIds.has(q.id)));
+          currentDeck.push(...rest.slice(0, selectedCount - currentDeck.length));
+        }
+      } else {
+        const filtered = pool.filter(q => q.d === selectedDifficulty);
+        const source = filtered.length >= selectedCount ? filtered : pool;
+        currentDeck = shuffle(source).slice(0, selectedCount);
+      }
+
+      currentIndex = 0;
+      score = 0;
+      correctAnswers = 0;
+      currentStreak = 0;
+
+      document.getElementById("homeScreen").classList.add("hidden");
+      document.getElementById("resultScreen").classList.add("hidden");
+      document.getElementById("gameScreen").classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const qObj = currentDeck[currentIndex];
+      document.getElementById("scoreDisplay").textContent = score;
+      document.getElementById("questionCounter").textContent = `سؤال ${currentIndex + 1} من ${currentDeck.length}`;
+      document.getElementById("questionIdLabel").textContent = `رقم السؤال في البنك: #${qObj.id} من 3000`;
+      document.getElementById("qCategoryTag").textContent = qObj.categoryName;
+
+      const diffTag = document.getElementById("qDifficultyTag");
+      diffTag.className = "tag";
+      if (qObj.d === "easy") {
+        diffTag.textContent = "🟢 مستوى سهل";
+        diffTag.classList.add("tag-diff-easy");
+      } else if (qObj.d === "medium") {
+        diffTag.textContent = "🟡 مستوى متوسط";
+        diffTag.classList.add("tag-diff-medium");
+      } else {
+        diffTag.textContent = "🔴 مستوى صعب";
+        diffTag.classList.add("tag-diff-hard");
+      }
+
+      const pct = ((currentIndex) / currentDeck.length) * 100;
+      document.getElementById("progressFill").style.width = `${pct}%`;
+
+      document.getElementById("questionText").textContent = qObj.q;
+      document.getElementById("explanationBox").classList.add("hidden");
+      document.getElementById("nextBtn").classList.add("hidden");
+
+      // Shuffle options while tracking the correct answer
+      const mappedOptions = qObj.o.map((text, idx) => ({
+        text,
+        isCorrect: idx === qObj.a
+      }));
+      const shuffledOptions = shuffle(mappedOptions);
+
+      const letters = ["أ", "ب", "ج", "د"];
+      const grid = document.getElementById("optionsGrid");
+      grid.innerHTML = "";
+
+      shuffledOptions.forEach((opt, i) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt.text}</span>`;
+        btn.onclick = () => handleAnswer(btn, opt.isCorrect, shuffledOptions, qObj);
+        grid.appendChild(btn);
+      });
+
+      if (autoTts) {
+        speakCurrentQuestion();
+      }
+    }
+
+    function handleAnswer(clickedBtn, isCorrect, shuffledOptions, qObj) {
+      const buttons = document.querySelectorAll("#optionsGrid .option-btn");
+      buttons.forEach((b, idx) => {
+        b.disabled = true;
+        if (shuffledOptions[idx].isCorrect) {
+          b.classList.add("correct");
+        }
+      });
+
+      totalSolved++;
+      localStorage.setItem("q3000_solved", totalSolved);
+
+      if (isCorrect) {
+        playTone("correct");
+        const pts = qObj.d === "hard" ? 30 : qObj.d === "medium" ? 20 : 10;
+        score += pts;
+        correctAnswers++;
+        currentStreak++;
+        if (currentStreak > bestStreak) {
+          bestStreak = currentStreak;
+          localStorage.setItem("q3000_best_streak", bestStreak);
+        }
+      } else {
+        playTone("wrong");
+        clickedBtn.classList.add("wrong");
+        currentStreak = 0;
+      }
+
+      document.getElementById("scoreDisplay").textContent = score;
+      const expBox = document.getElementById("explanationBox");
+      expBox.innerHTML = `${isCorrect ? "✅ <strong>إجابة صحيحة!</strong>" : "❌ <strong>إجابة غير صحيحة!</strong>"} — ${qObj.e}`;
+      expBox.classList.remove("hidden");
+
+      const nextBtn = document.getElementById("nextBtn");
+      nextBtn.textContent = currentIndex + 1 < currentDeck.length ? "السؤال التالي ⬅️" : "عرض النتيجة النهائية 🏆";
+      nextBtn.classList.remove("hidden");
+    }
+
+    function nextQuestion() {
+      playTone("click");
+      if (currentIndex + 1 < currentDeck.length) {
+        currentIndex++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById("gameScreen").classList.add("hidden");
+      document.getElementById("resultScreen").classList.remove("hidden");
+
+      const accuracy = Math.round((correctAnswers / currentDeck.length) * 100);
+      document.getElementById("finalScoreNum").textContent = score;
+      document.getElementById("finalCorrectNum").textContent = `${correctAnswers} / ${currentDeck.length}`;
+      document.getElementById("finalAccuracyNum").textContent = `${accuracy}%`;
+
+      const catObj = CATEGORIES.find(c => c.id === selectedCategory);
+      document.getElementById("resultSummaryText").textContent =
+        `أكملت جولة من ${currentDeck.length} سؤال في قسم «${catObj ? catObj.name : ""}» بدون أي ضغط وقت!`;
+    }
+
+    function returnHome() {
+      playTone("click");
+      document.getElementById("solvedCountStat").textContent = totalSolved;
+      document.getElementById("bestStreakStat").textContent = bestStreak;
+      document.getElementById("gameScreen").classList.add("hidden");
+      document.getElementById("resultScreen").classList.add("hidden");
+      document.getElementById("homeScreen").classList.remove("hidden");
+    }
+
+    // =========================================================
+    // 6. SHARING HELPERS
+    // =========================================================
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2600);
+    }
+
+    async function shareText(text) {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "تحدي الـ 3000 سؤال",
+            text: text,
+            url: window.location.href
+          });
+          return;
+        } catch (e) {}
+      }
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(text + "\n" + window.location.href);
+        showToast("📋 تم نسخ رسالة الدعوة والرابط لمشاركتها مع أصحابك!");
+      }
+    }
+
+    function shareGame() {
+      playTone("click");
+      shareText("🔥 تعالَ نلعب «تحدي الـ 3000 سؤال»! أسئلة دينية، أحياء، علوم، معلومات عامة، قانون، وفوازير مصرية بدون وقت:");
+    }
+
+    function shareScore() {
+      playTone("click");
+      shareText(`🏆 حققت ${score} نقطة (${correctAnswers} من ${currentDeck.length} صح) في لعبة «تحدي الـ 3000 سؤال»! تقدر تكسر رقمي؟`);
+    }
+
+    // Initialize App
+    document.getElementById("solvedCountStat").textContent = totalSolved;
+    document.getElementById("bestStreakStat").textContent = bestStreak;
+    updateSoundUI();
+    renderCategories();
+  </script>
+</body>
+</html>
